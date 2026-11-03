@@ -1,0 +1,25 @@
+/* ============================================================
+   SARKARICOURSE — SELF-HOSTED FONTS
+   Replaces the Google Fonts CDN (fonts.googleapis.com) with
+   locally bundled font files via @fontsource, served from our
+   own domain — faster, no third-party request, GDPR-friendlier.
+   ============================================================ */
+
+/* Outfit — headings (400/500/600/700/800 used across the design system) */
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
+@import '@fontsource/outfit/800.css';
+
+/* Poppins — body copy (300/400/500/600/700 used across the design system) */
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+
+/* Manrope — numbers/stats (600/700/800 used across the design system) */
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
+@import '@fontsource/manrope/800.css';

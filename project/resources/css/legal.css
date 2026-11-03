@@ -1,0 +1,66 @@
+/* ============================================================
+   SARKARICOURSE — LEGAL PAGES (Privacy / Refund / Terms)
+   ============================================================ */
+
+.sc-legal { padding-bottom: var(--sp-8); }
+
+/* ── Hero ───────────────────────────────────────── */
+.sc-legal-hero { background: var(--sc-gradient-hero); padding: 40px 0 50px; }
+.sc-breadcrumb { font-size: .8rem; color: var(--sc-paragraph); margin-bottom: 20px; }
+.sc-breadcrumb a { color: var(--sc-paragraph); text-decoration: none; }
+.sc-breadcrumb a:hover { color: var(--sc-primary); }
+.sc-breadcrumb span { margin: 0 6px; color: var(--sc-muted); }
+.sc-legal-hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.sc-legal-hero-inner h1 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-bottom: 8px; }
+.sc-legal-hero-inner p { margin: 0; font-size: .88rem; }
+.sc-legal-hero-icon {
+  width: 76px; height: 76px; border-radius: 50%; background: #fff; box-shadow: var(--shadow-md);
+  display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0;
+}
+
+/* ── Layout ─────────────────────────────────────── */
+.sc-legal-layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; padding-top: 40px; align-items: start; }
+
+.sc-legal-nav { position: sticky; top: calc(var(--header-h) + 20px); display: flex; flex-direction: column; gap: 16px; }
+.sc-legal-nav-card, .sc-legal-help-card {
+  background: #fff; border: 1px solid var(--sc-border); border-radius: var(--r-lg); padding: 22px;
+}
+.sc-legal-nav-card h2 { font-size: .95rem; margin-bottom: 14px; }
+.sc-legal-nav-card ol { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.sc-legal-nav-card a {
+  display: block; padding: 9px 12px; border-radius: var(--r-sm); font-size: .82rem; color: var(--sc-paragraph);
+  text-decoration: none; transition: background var(--dur-fast), color var(--dur-fast);
+}
+.sc-legal-nav-card a:hover { background: var(--sc-section); color: var(--sc-primary); }
+.sc-legal-help-card { background: var(--sc-section); }
+.sc-legal-help-card strong { display: block; font-size: .9rem; margin-bottom: 6px; color: var(--sc-heading); }
+.sc-legal-help-card p { font-size: .8rem; margin: 0 0 14px; line-height: 1.6; }
+.sc-legal-help-standalone { max-width: 480px; }
+
+/* ── Content ────────────────────────────────────── */
+.sc-legal-intro p { font-size: .96rem; line-height: 1.8; color: var(--sc-heading); margin-bottom: 14px; }
+.sc-legal-point {
+  display: flex; gap: 18px; background: #fff; border: 1px solid var(--sc-border); border-radius: var(--r-lg);
+  padding: 24px; margin-bottom: 16px; scroll-margin-top: calc(var(--header-h) + 20px);
+}
+.sc-legal-point-icon {
+  width: 44px; height: 44px; border-radius: 12px; background: rgba(109,40,217,.08); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.sc-legal-point h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.sc-legal-point p { font-size: .9rem; line-height: 1.7; margin: 0; color: var(--sc-paragraph); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 991px) {
+  .sc-legal-layout { grid-template-columns: 1fr; }
+  .sc-legal-nav { position: static; flex-direction: row; flex-wrap: wrap; }
+  .sc-legal-nav-card, .sc-legal-help-card { flex: 1 1 260px; }
+  .sc-legal-hero-icon { display: none; }
+}
+
+@media (max-width: 640px) {
+  .sc-legal-point { flex-direction: column; gap: 12px; padding: 20px; }
+  .sc-legal-nav { flex-direction: column; }
+}

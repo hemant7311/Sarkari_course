@@ -1,0 +1,52 @@
+/* ============================================================
+   SARKARICOURSE — SERVICES PAGE (Phase 2)
+   ============================================================ */
+
+.sc-services { overflow-x: clip; }
+
+/* ── Hero ───────────────────────────────────────── */
+.sc-services-hero { position: relative; padding: 44px 0 56px; overflow: hidden; background: var(--sc-gradient-hero); }
+.sc-services-hero .sc-hero-bg { position: absolute; inset: 0; z-index: 0; }
+.sc-services-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+.sc-services-hero h1 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin: 14px 0; }
+.sc-services-hero-sub { font-size: .96rem; max-width: 480px; line-height: 1.7; margin-bottom: 22px; }
+.sc-services-hero .sc-hero-visual { height: 300px; }
+.sc-services-hero .sc-hero-3d { width: 100%; height: 100%; }
+
+/* ── Service cards ──────────────────────────────── */
+.sc-service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.sc-service-card { padding: 28px 22px; }
+.sc-service-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px;
+  border-radius: 14px; background: rgba(109,40,217,.08); font-size: 1.5rem; margin-bottom: 16px;
+}
+.sc-service-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.sc-service-card p { font-size: .84rem; line-height: 1.6; margin-bottom: 14px; }
+.sc-service-link { color: var(--sc-primary); font-weight: 600; font-size: .82rem; text-decoration: none; }
+
+/* ── Trust strip ────────────────────────────────── */
+.sc-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.sc-trust-item span { font-size: 1.8rem; display: block; margin-bottom: 10px; }
+.sc-trust-item strong { display: block; font-size: .94rem; color: var(--sc-heading); margin-bottom: 6px; }
+.sc-trust-item p { font-size: .82rem; margin: 0; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1180px) {
+  .sc-service-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 991px) {
+  .sc-services-hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .sc-services-hero .sc-hero-visual { order: -1; height: 220px; }
+  .sc-services-hero-sub { margin-left: auto; margin-right: auto; }
+  .sc-hero-actions { justify-content: center; }
+  .sc-service-grid { grid-template-columns: repeat(2, 1fr); }
+  .sc-trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .sc-service-grid { grid-template-columns: 1fr; }
+  .sc-trust-grid { grid-template-columns: 1fr; }
+}

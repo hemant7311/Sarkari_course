@@ -1,0 +1,29 @@
+/* ============================================================
+   SARKARICOURSE — 404 / 500 ERROR PAGES
+   ============================================================ */
+
+.sc-error-page { padding: 60px 0 100px; background: var(--sc-gradient-hero); min-height: 60vh; }
+.sc-error-panel {
+  position: relative; max-width: 640px; margin: 0 auto; text-align: center;
+  background: #fff; border-radius: var(--r-xl); padding: 46px 40px 46px; box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.sc-error-illustration {
+  width: min(100%, 380px); height: auto; margin: 0 auto 22px; display: block; animation: sc-float 4.5s ease-in-out infinite;
+}
+.sc-error-panel h2 { font-size: 1.5rem; margin-bottom: 12px; }
+.sc-error-panel p { max-width: 440px; margin: 0 auto 30px; font-size: .94rem; line-height: 1.7; }
+.sc-error-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Help box (500 page) ────────────────────────── */
+.sc-error-help { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--sc-border); }
+.sc-error-help span { display: block; font-weight: 700; color: var(--sc-heading); margin-bottom: 4px; font-size: .9rem; }
+.sc-error-help p { font-size: .84rem; margin-bottom: 14px; }
+
+@media (prefers-reduced-motion: reduce) { .sc-error-illustration { animation: none; } }
+
+@media (max-width: 640px) {
+  .sc-error-panel { padding: 36px 22px 34px; }
+  .sc-error-actions { flex-direction: column; }
+  .sc-error-actions .sc-btn { width: 100%; }
+}

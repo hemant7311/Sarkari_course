@@ -1,0 +1,111 @@
+/* ============================================================
+   SARKARICOURSE — AUTH PAGES (Login / Signup / Forgot / Reset / Verify)
+   ============================================================ */
+
+.sc-auth-body { margin: 0; min-height: 100vh; }
+.sc-auth-page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+
+/* ── Left brand panel ───────────────────────────── */
+.sc-auth-brand {
+  position: relative; background: var(--sc-gradient-dark); overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between; padding: 44px 48px;
+}
+.sc-auth-brand::before, .sc-auth-brand::after {
+  content: ''; position: absolute; border-radius: 50%; background: rgba(139,92,246,.18); filter: blur(10px);
+}
+.sc-auth-brand::before { width: 380px; height: 380px; top: -140px; right: -120px; }
+.sc-auth-brand::after { width: 260px; height: 260px; bottom: -80px; left: -60px; background: rgba(245,158,11,.1); }
+.sc-logo-text-light { color: #fff; }
+.sc-logo-text-light em { color: #C4B5FD; }
+
+.sc-auth-brand-body { position: relative; z-index: 1; margin-top: 24px; }
+.sc-auth-brand-body h1 { font-size: clamp(1.7rem, 3vw, 2.3rem); color: #fff; line-height: 1.2; margin-bottom: 14px; max-width: 380px; }
+.sc-auth-brand-body p { color: rgba(255,255,255,.65); font-size: .92rem; line-height: 1.7; max-width: 360px; margin-bottom: 30px; }
+.sc-auth-stats { display: flex; gap: 28px; }
+.sc-auth-stats strong { display: block; font-family: var(--font-numbers); font-size: 1.6rem; color: #fff; }
+.sc-auth-stats span { font-size: .72rem; color: rgba(255,255,255,.5); }
+
+.sc-auth-hero-3d { position: relative; z-index: 1; flex: 1; min-height: 220px; margin: 10px 0; }
+.sc-auth-hero-3d canvas { display: block; }
+
+.sc-auth-badges { position: relative; z-index: 1; display: flex; gap: 10px; flex-wrap: wrap; }
+.sc-auth-badges span {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.8);
+  font-size: .72rem; font-weight: 600; padding: 7px 14px; border-radius: var(--r-full);
+}
+
+/* ── Right form panel ───────────────────────────── */
+.sc-auth-panel-wrap { display: flex; align-items: center; justify-content: center; padding: 44px; overflow-y: auto; }
+.sc-auth-form-wrap { width: 100%; max-width: 420px; }
+
+.sc-auth-tabs { display: flex; background: var(--sc-section); border-radius: var(--r-md); padding: 5px; margin-bottom: 26px; }
+.sc-auth-tab {
+  flex: 1; text-align: center; padding: 11px; border-radius: 9px; font-size: .88rem; font-weight: 600;
+  color: var(--sc-paragraph); cursor: pointer; border: none; background: transparent; font-family: var(--font-body);
+  transition: all var(--dur-fast);
+}
+.sc-auth-tab.active { background: #fff; color: var(--sc-heading); box-shadow: var(--shadow-sm); }
+.sc-auth-tab-panel { display: none; }
+.sc-auth-tab-panel.active { display: block; }
+
+.sc-auth-form-wrap h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.sc-auth-form-wrap > .sc-auth-tab-panel > p, .sc-auth-form-intro { font-size: .88rem; color: var(--sc-paragraph); margin-bottom: 22px; line-height: 1.6; }
+
+/* Social buttons */
+.sc-social-btn {
+  width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 12px 20px; border: 1.5px solid var(--sc-border); border-radius: var(--r-md); background: #fff;
+  font-size: .88rem; font-weight: 600; color: var(--sc-heading); cursor: pointer; text-decoration: none;
+  margin-bottom: 12px; transition: all var(--dur-fast); font-family: var(--font-body);
+}
+.sc-social-btn:hover { border-color: var(--sc-muted); background: var(--sc-section); color: var(--sc-heading); }
+.sc-social-btn svg { width: 19px; height: 19px; flex-shrink: 0; }
+.sc-social-btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
+.sc-social-btn[aria-disabled="true"]:hover { background: #fff; border-color: var(--sc-border); }
+
+.sc-auth-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0; }
+.sc-auth-divider::before, .sc-auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--sc-border); }
+.sc-auth-divider span { font-size: .72rem; color: var(--sc-muted); font-weight: 500; white-space: nowrap; }
+
+/* Form rows */
+.sc-af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.sc-af-group { margin-bottom: 16px; }
+.sc-pw-field { position: relative; }
+.sc-pw-toggle {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none;
+  color: var(--sc-muted); cursor: pointer; padding: 4px; display: flex;
+}
+.sc-pw-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.sc-pw-row .sc-label { margin: 0; }
+.sc-forgot-link { font-size: .78rem; color: var(--sc-primary); text-decoration: none; font-weight: 600; }
+
+.sc-remember { display: flex; align-items: center; gap: 8px; font-size: .84rem; color: var(--sc-heading); margin-bottom: 20px; cursor: pointer; }
+.sc-remember input { accent-color: var(--sc-primary); width: 16px; height: 16px; }
+
+.sc-auth-terms { font-size: .78rem; color: var(--sc-paragraph); line-height: 1.6; margin-bottom: 18px; }
+.sc-auth-terms a { color: var(--sc-primary); text-decoration: none; }
+
+.sc-auth-switch { text-align: center; font-size: .84rem; color: var(--sc-paragraph); margin-top: 4px; }
+.sc-auth-switch a { color: var(--sc-primary); font-weight: 600; text-decoration: none; cursor: pointer; }
+
+.sc-auth-note { text-align: center; font-size: .82rem; color: var(--sc-muted); margin-top: 18px; }
+
+/* Trust strip under form panel (mobile hidden brand replacement) */
+.sc-auth-trust { display: none; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .sc-auth-page { grid-template-columns: 1fr; }
+  .sc-auth-brand { order: 2; padding: 28px 24px 34px; }
+  .sc-auth-brand-body h1 { font-size: 1.4rem; }
+  .sc-auth-stats { display: none; }
+  .sc-auth-hero-3d { display: none; }
+  .sc-auth-panel-wrap { order: 1; padding: 32px 20px; }
+}
+
+@media (max-width: 480px) {
+  .sc-auth-panel-wrap { padding: 28px 16px; }
+  .sc-af-row { grid-template-columns: 1fr; gap: 0; }
+}

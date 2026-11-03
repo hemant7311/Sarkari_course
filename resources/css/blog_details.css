@@ -1,0 +1,49 @@
+/* ============================================================
+   SARKARICOURSE — SINGLE BLOG POST PAGE (Phase 2)
+   ============================================================ */
+
+.sc-blogpost-hero { padding: 30px 0 0; }
+.sc-blogpost-meta-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 18px 0 16px; font-size: .82rem; color: var(--sc-paragraph); }
+.sc-blogpost-cat { background: rgba(109,40,217,.08); color: var(--sc-primary); font-weight: 700; padding: 5px 12px; border-radius: var(--r-full); font-size: .72rem; }
+.sc-blogpost-hero h1 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); max-width: 840px; margin-bottom: 22px; }
+.sc-blogpost-author { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.sc-blogpost-author strong { display: block; font-size: .9rem; color: var(--sc-heading); }
+.sc-blogpost-author span { font-size: .76rem; color: var(--sc-muted); }
+
+.sc-blogpost-featured {
+  aspect-ratio: 16/7; border-radius: var(--r-xl); background: var(--sc-section) center/cover no-repeat;
+  margin-bottom: var(--sp-7); box-shadow: var(--shadow-md);
+}
+
+/* ── Content + share sidebar ────────────────────── */
+.sc-blogpost-grid { display: grid; grid-template-columns: 1fr 64px; gap: 32px; align-items: start; max-width: 900px; margin: 0 auto; }
+.sc-blogpost-content { font-size: 1rem; line-height: 1.85; color: var(--sc-heading); }
+.sc-blogpost-content h2 { font-size: 1.4rem; margin: 32px 0 14px; }
+.sc-blogpost-content h3 { font-size: 1.15rem; margin: 26px 0 12px; }
+.sc-blogpost-content p { margin: 0 0 18px; color: var(--sc-paragraph); }
+.sc-blogpost-content ul, .sc-blogpost-content ol { margin: 0 0 18px; padding-left: 22px; color: var(--sc-paragraph); }
+.sc-blogpost-content li { margin-bottom: 8px; }
+.sc-blogpost-content img { max-width: 100%; border-radius: var(--r-md); margin: 20px 0; }
+.sc-blogpost-content a { color: var(--sc-primary); }
+.sc-blogpost-content blockquote {
+  border-left: 3px solid var(--sc-primary); background: var(--sc-section); padding: 16px 20px; margin: 0 0 18px;
+  border-radius: 0 var(--r-md) var(--r-md) 0; font-style: italic; color: var(--sc-heading);
+}
+
+.sc-blogpost-share { position: sticky; top: calc(var(--header-h) + 20px); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.sc-share-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--sc-muted); margin-bottom: 4px; }
+.sc-share-btn {
+  width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1.5px solid var(--sc-border);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem;
+  color: var(--sc-heading); text-decoration: none; transition: all var(--dur-fast);
+}
+.sc-share-btn:hover { background: var(--sc-gradient-primary); color: #fff; border-color: transparent; transform: translateY(-2px); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .sc-blogpost-grid { grid-template-columns: 1fr; }
+  .sc-blogpost-share { position: static; flex-direction: row; justify-content: center; }
+  .sc-blogpost-featured { aspect-ratio: 16/10; }
+}

@@ -1,0 +1,18 @@
+/* ============================================================
+   SARKARICOURSE — SEARCH RESULTS PAGE (Phase 3)
+   (course/blog card visuals reused from home.css / blog.css)
+   ============================================================ */
+
+.sc-search-results-hero { background: var(--sc-gradient-hero); padding: 44px 0 30px; }
+.sc-search-results-bar {
+  display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid var(--sc-border);
+  border-radius: var(--r-md); padding: 10px 10px 10px 20px; max-width: 640px; margin: 0 auto; box-shadow: var(--shadow-md);
+  color: var(--sc-muted);
+}
+.sc-search-results-bar input { flex: 1; border: none; outline: none; font-family: var(--font-body); font-size: 1rem; color: var(--sc-heading); }
+.sc-search-results-count { text-align: center; margin: 16px 0 0; font-size: .88rem; color: var(--sc-paragraph); }
+
+@media (max-width: 640px) {
+  .sc-search-results-bar { flex-wrap: wrap; }
+  .sc-search-results-bar input { width: 100%; order: 3; margin-top: 6px; }
+}

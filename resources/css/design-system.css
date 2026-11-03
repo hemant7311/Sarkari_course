@@ -1,0 +1,264 @@
+/* ============================================================
+   SARKARICOURSE — GLOBAL DESIGN SYSTEM
+   Phase 2 — Public Website
+   Loaded on every public page via layouts/first.blade.php
+   ============================================================ */
+
+:root {
+  /* ── Colors ─────────────────────────────────────── */
+  --sc-primary: #6D28D9;
+  --sc-primary-rgb: 109, 40, 217;
+  --sc-secondary: #7C3AED;
+  --sc-accent: #8B5CF6;
+  --sc-success: #22C55E;
+  --sc-warning: #F59E0B;
+  --sc-danger: #EF4444;
+
+  --sc-bg: #FFFFFF;
+  --sc-section: #F8F7FF;
+  --sc-border: #ECE9FF;
+  --sc-heading: #111827;
+  --sc-paragraph: #6B7280;
+  --sc-muted: #9CA3AF;
+
+  --sc-dark: #0B1120;
+  --sc-dark-2: #1E1B33;
+
+  --sc-gradient-primary: linear-gradient(135deg, var(--sc-primary), var(--sc-accent));
+  --sc-gradient-hero: linear-gradient(135deg, #EDE9FE 0%, #F5F3FF 50%, #FFFFFF 100%);
+  --sc-gradient-dark: linear-gradient(135deg, #0B1120 0%, #1E1B33 100%);
+
+  /* ── Typography ─────────────────────────────────── */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-numbers: 'Manrope', sans-serif;
+
+  /* ── Spacing scale (8px base) ───────────────────── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* ── Radius ─────────────────────────────────────── */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-full: 999px;
+
+  /* ── Shadows ────────────────────────────────────── */
+  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 20px 48px rgba(109, 40, 217, 0.14);
+  --shadow-glow: 0 0 0 1px rgba(109,40,217,.08), 0 20px 60px rgba(109,40,217,.20);
+
+  /* ── Glass ──────────────────────────────────────── */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-blur: 16px;
+
+  /* ── Motion ─────────────────────────────────────── */
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --dur-fast: .2s;
+  --dur-med: .4s;
+  --dur-slow: .8s;
+
+  --header-h: 76px;
+  --header-h-mobile: 64px;
+}
+
+/* ── Base ────────────────────────────────────────── */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; max-width: 100vw; }
+.sc-scope, .sc-scope * { box-sizing: border-box; }
+.sc-scope { font-family: var(--font-body); color: var(--sc-paragraph); }
+.sc-scope h1, .sc-scope h2, .sc-scope h3, .sc-scope h4, .sc-scope h5 {
+  font-family: var(--font-heading);
+  color: var(--sc-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.sc-scope .sc-num { font-family: var(--font-numbers); font-weight: 800; }
+
+.sc-container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 640px) { .sc-container { padding: 0 18px; } }
+
+.sc-section { padding: var(--sp-8) 0; }
+@media (max-width: 768px) { .sc-section { padding: var(--sp-7) 0; } }
+
+.sc-section-alt { background: var(--sc-section); }
+
+/* ── Eyebrow / Badge ────────────────────────────── */
+.sc-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--sc-primary); background: #F1EBFF;
+  padding: 7px 16px; border-radius: var(--r-full);
+  margin-bottom: var(--sp-4);
+}
+
+.sc-section-head { text-align: center; max-width: 640px; margin: 0 auto var(--sp-7); }
+.sc-section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); margin-bottom: var(--sp-3); }
+.sc-section-head p { font-size: 1rem; }
+.sc-section-head .sc-accent { color: var(--sc-primary); }
+
+/* ── Buttons ────────────────────────────────────── */
+.sc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 600; font-size: .95rem;
+  padding: 14px 28px; border-radius: var(--r-md);
+  border: 1.5px solid transparent; cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background var(--dur-fast);
+  text-decoration: none; white-space: nowrap;
+}
+.sc-btn:active { transform: scale(.97); }
+.sc-btn-primary { background: var(--sc-gradient-primary); color: #fff; box-shadow: var(--shadow-lg); }
+.sc-btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); color: #fff; }
+.sc-btn-outline { background: #fff; color: var(--sc-primary); border-color: var(--sc-border); }
+.sc-btn-outline:hover { border-color: var(--sc-primary); transform: translateY(-3px); color: var(--sc-primary); }
+.sc-btn-ghost { background: rgba(109,40,217,.06); color: var(--sc-primary); }
+.sc-btn-ghost:hover { background: rgba(109,40,217,.12); color: var(--sc-primary); }
+.sc-btn-sm { padding: 10px 18px; font-size: .85rem; }
+.sc-btn-white { background: #fff; color: var(--sc-primary); }
+.sc-btn-white:hover { transform: translateY(-3px); color: var(--sc-primary); }
+
+/* ── Cards ──────────────────────────────────────── */
+.sc-card {
+  background: #fff; border: 1px solid var(--sc-border); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out), border-color var(--dur-med);
+}
+.sc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+
+/* ── Glass ──────────────────────────────────────── */
+.sc-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  border: 1px solid var(--glass-border);
+}
+
+/* ── Forms ──────────────────────────────────────── */
+.sc-input, .sc-textarea, .sc-select {
+  width: 100%; font-family: var(--font-body); font-size: .92rem;
+  padding: 14px 16px; border-radius: var(--r-md);
+  border: 1.5px solid var(--sc-border); background: #fff;
+  color: var(--sc-heading); transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.sc-input:focus, .sc-textarea:focus, .sc-select:focus {
+  outline: none; border-color: var(--sc-primary);
+  box-shadow: 0 0 0 4px rgba(109,40,217,.12);
+}
+.sc-label { display: block; font-size: .85rem; font-weight: 600; color: var(--sc-heading); margin-bottom: 8px; }
+.sc-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media (max-width: 640px) { .sc-form-row { grid-template-columns: 1fr; } }
+.sc-field-error { color: var(--sc-danger); font-size: .76rem; margin-top: 6px; display: block; }
+.sc-alert { padding: 14px 18px; border-radius: var(--r-md); font-size: .88rem; margin-bottom: 20px; }
+.sc-alert-success { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+.sc-alert-error { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+
+/* ── Stat pill ──────────────────────────────────── */
+.sc-stat-pill {
+  display: flex; align-items: center; gap: 12px;
+  background: #fff; border: 1px solid var(--sc-border); border-radius: var(--r-md);
+  padding: 14px 18px; box-shadow: var(--shadow-sm);
+}
+.sc-stat-pill .sc-stat-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(109,40,217,.1); color: var(--sc-primary);
+}
+.sc-stat-pill strong { display: block; font-family: var(--font-numbers); font-size: 1.05rem; color: var(--sc-heading); }
+.sc-stat-pill span { font-size: .74rem; color: var(--sc-paragraph); }
+
+/* ── Scroll reveal (GSAP targets) ──────────────────── */
+.reveal-up, .reveal-left, .reveal-right, .reveal-scale { will-change: transform, opacity; }
+
+/* ── Utility ────────────────────────────────────── */
+.sc-grad-text {
+  background: var(--sc-gradient-primary);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.sc-visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.sc-float { animation: sc-float 5s ease-in-out infinite; }
+@keyframes sc-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+/* ── Hero 3D mount: real illustration backdrop + Three.js canvas layered on top ── */
+.sc-hero-3d, .sc-auth-hero-3d, .sc-sdash-banner-3d {
+  background-repeat: no-repeat; background-position: center; background-size: contain;
+}
+.sc-hero-3d canvas, .sc-auth-hero-3d canvas, .sc-sdash-banner-3d canvas { position: relative; z-index: 1; }
+
+/* ── Desktop glow/magnetic cursor (added by sc-animations.js) ───── */
+.sc-cursor-dot, .sc-cursor-ring {
+  position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; border-radius: 50%;
+  transition: opacity .2s ease;
+}
+.sc-cursor-dot {
+  width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--sc-primary);
+}
+.sc-cursor-ring {
+  width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid rgba(109,40,217,.4);
+  transition: width .25s var(--ease-out), height .25s var(--ease-out), margin .25s var(--ease-out), background .25s, border-color .25s, opacity .2s;
+}
+.sc-cursor-ring--active {
+  width: 52px; height: 52px; margin: -26px 0 0 -26px; background: rgba(109,40,217,.08); border-color: rgba(109,40,217,.6);
+}
+@media (pointer: coarse) { .sc-cursor-dot, .sc-cursor-ring { display: none; } }
+
+/* ── Accessibility: visible keyboard focus rings everywhere ─── */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible,
+select:focus-visible, [tabindex]:focus-visible, summary:focus-visible {
+  outline: 2.5px solid var(--sc-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.sc-btn:focus-visible { outline-offset: 3px; }
+/* Skip-to-content link (screen readers / keyboard users) */
+.sc-skip-link {
+  position: absolute; left: 12px; top: -60px; background: var(--sc-primary); color: #fff;
+  padding: 10px 18px; border-radius: var(--r-md); font-size: .85rem; font-weight: 600; z-index: 10000;
+  text-decoration: none; transition: top .2s ease;
+}
+.sc-skip-link:focus { top: 12px; }
+
+/* ── Reusable skeleton loading utility ──────────────────────── */
+.sc-skeleton {
+  position: relative; overflow: hidden; background: #ECE9F4; border-radius: var(--r-md);
+}
+.sc-skeleton::after {
+  content: ''; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent);
+  animation: sc-skeleton-sweep 1.6s ease-in-out infinite;
+}
+@keyframes sc-skeleton-sweep { 100% { transform: translateX(100%); } }
+.sc-skeleton-text { height: 14px; border-radius: 5px; margin-bottom: 8px; }
+.sc-skeleton-text.sc-w-60 { width: 60%; }
+.sc-skeleton-text.sc-w-80 { width: 80%; }
+.sc-skeleton-circle { border-radius: 50%; }
+@media (prefers-reduced-motion: reduce) { .sc-skeleton::after { animation: none; } }
+
+/* ── Button loading spinner (used by sc-animations.js form handler) ── */
+.sc-btn-spinner {
+  display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff; border-radius: 50%; animation: sc-btn-spin .7s linear infinite; vertical-align: -2px;
+}
+.sc-btn-outline .sc-btn-spinner, .sc-btn-ghost .sc-btn-spinner {
+  border-color: rgba(109,40,217,.25); border-top-color: var(--sc-primary);
+}
+@keyframes sc-btn-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-float { animation: none; }
+  .sc-card, .sc-btn { transition: none; }
+}

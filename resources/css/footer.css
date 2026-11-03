@@ -1,0 +1,231 @@
+/* ============================================================
+   SARKARICOURSE — GLOBAL FOOTER (Redesigned)
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a { text-decoration: none; }
+
+.footer {
+  font-family: var(--font-body);
+  background: #0b1120;
+  color: #fff;
+  padding: 64px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow blobs */
+.footer::before,
+.footer::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: .15;
+}
+.footer::before {
+  width: 480px; height: 480px;
+  background: var(--sc-primary);
+  top: -100px; left: -120px;
+}
+.footer::after {
+  width: 360px; height: 360px;
+  background: var(--sc-accent);
+  bottom: 80px; right: -80px;
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Main grid: 5 columns ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.6fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+/* ── Brand column ── */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.footer-logo-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6D28D9, #7C3AED);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.footer-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.footer-logo-text em { font-style: normal; color: #a78bfa; }
+
+.footer-tagline {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 260px;
+}
+
+/* Social buttons */
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.social-btn {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.7);
+  transition: background .2s, color .2s, transform .2s;
+}
+.social-btn:hover {
+  background: var(--sc-primary);
+  border-color: var(--sc-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.social-btn svg {
+  width: 16px; height: 16px;
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ── Column headers ── */
+.footer-col-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Link lists ── */
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links-list a {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,.55);
+  transition: color .2s, padding-left .2s;
+  display: block;
+}
+.footer-links-list a:hover {
+  color: #a78bfa;
+  padding-left: 4px;
+}
+
+/* ── Newsletter column ── */
+.footer-newsletter-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-newsletter-form input {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  width: 100%;
+  transition: border-color .2s;
+}
+.footer-newsletter-form input::placeholder { color: rgba(255,255,255,.35); }
+.footer-newsletter-form input:focus {
+  outline: none;
+  border-color: rgba(109,40,217,.7);
+}
+.footer-newsletter-form button {
+  background: linear-gradient(135deg, #6D28D9, #7C3AED);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: opacity .2s, transform .2s;
+}
+.footer-newsletter-form button:hover { opacity: 0.88; transform: translateY(-2px); }
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-copy {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,.4);
+}
+.footer-copy strong { color: rgba(255,255,255,.65); font-weight: 600; }
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+.footer-bottom-links a {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,.4);
+  transition: color .2s;
+}
+.footer-bottom-links a:hover { color: #a78bfa; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+    gap: 30px;
+  }
+  .footer-column-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .footer-column-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}

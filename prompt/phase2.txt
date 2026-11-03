@@ -1,0 +1,795 @@
+# SARKARICOURSE
+# PHASE 2
+# PUBLIC WEBSITE FRONTEND REDESIGN
+
+You are an Elite Senior Laravel Frontend Engineer, Senior UI/UX Designer, Creative Director and Motion Designer.
+
+IMPORTANT
+
+Phase 1 has already been completed.
+
+The Design System is finalized.
+
+Now start redesigning ONLY the Public Website.
+
+Do NOT modify backend.
+
+Do NOT modify controllers.
+
+Do NOT modify routes.
+
+Do NOT modify database.
+
+Do NOT modify APIs.
+
+Do NOT change functionality.
+
+Use the Design System created in Phase 1.
+
+=========================================================
+REAL 3D EXPERIENCE (HIGH PRIORITY)
+=========================================================
+
+This website should NOT use only flat images.
+
+Create a premium REAL 3D experience.
+
+Use
+
+Three.js
+
+Spline
+
+ReactBits Style Animations (JavaScript equivalent where applicable)
+
+GSAP
+
+Lenis
+
+LottieFiles
+
+=========================================================
+
+3D HERO
+
+Use a real interactive 3D Hero.
+
+Mouse Movement
+
+Object Rotation
+
+Floating Animation
+
+Smooth Lighting
+
+Depth Effect
+
+Parallax
+
+Interactive Camera
+
+=========================================================
+
+3D OBJECTS
+
+Use real 3D models where appropriate.
+
+Examples
+
+Graduation Cap
+
+Books
+
+Laptop
+
+Certificate
+
+AI Robot
+
+Student
+
+Trophy
+
+Search Icon
+
+Payment Card
+
+Dashboard Objects
+
+Notification Bell
+
+Settings Gear
+
+=========================================================
+
+3D INTERACTION
+
+Mouse Hover
+
+Mouse Follow
+
+Smooth Rotation
+
+Floating Motion
+
+Parallax Motion
+
+Depth Movement
+
+Light Reflection
+
+Shadow Movement
+
+=========================================================
+
+GSAP
+
+Animate
+
+3D Cards
+
+Hero Objects
+
+Buttons
+
+Images
+
+Texts
+
+Cards
+
+Sections
+
+=========================================================
+
+SPLINE
+
+Use Spline scenes for
+
+Landing Hero
+
+About Hero
+
+Course Hero
+
+Dashboard Hero
+
+AI Assistant
+
+=========================================================
+
+THREE.JS
+
+Use Three.js for
+
+Interactive Models
+
+Lighting
+
+Camera Movement
+
+Particle Effects
+
+Background Effects
+
+Floating Objects
+
+=========================================================
+
+LOTTIE
+
+Use Lottie only for
+
+Icons
+
+Loading
+
+Success
+
+Notification
+
+AI Assistant
+
+Search
+
+=========================================================
+
+PERFORMANCE
+
+Optimize every 3D model.
+
+Compress textures.
+
+Lazy Load Models.
+
+Lazy Load Spline.
+
+Lazy Load Three.js.
+
+Maintain 60 FPS.
+
+Never block page rendering.
+
+=========================================================
+
+IMPORTANT
+
+Do NOT overuse 3D.
+
+3D should enhance UX.
+
+Keep the website clean, elegant and premium.
+
+Never sacrifice performance for animations.
+
+Create an Apple-level experience.
+
+Use modern premium motion design.
+
+=========================================================
+REDESIGN ONLY THESE PAGES
+=========================================================
+
+Home (Landing Page)
+
+About
+
+Courses
+
+Course Details
+
+Services
+
+Blogs
+
+Single Blog
+
+YouTube Blog
+
+Contact
+
+Privacy Policy
+
+Refund Policy
+
+Terms & Conditions
+
+=========================================================
+GLOBAL DESIGN SYSTEM
+=========================================================
+
+Use the same
+
+Colors
+
+Typography
+
+Spacing
+
+Border Radius
+
+Glassmorphism
+
+Buttons
+
+Cards
+
+Forms
+
+Icons
+
+Animations
+
+Every page must feel like part of the same product.
+
+=========================================================
+GLOBAL HEADER
+=========================================================
+
+Create ONE reusable Blade Header.
+
+Desktop
+
+Logo
+
+About
+
+Courses
+
+Services
+
+Blog
+
+Contact
+
+Search Icon
+
+Login Button
+
+Signup Button
+
+Sticky Navigation
+
+Glass Effect
+
+Blur
+
+Smooth Shadow
+
+Animated Active Link
+
+Desktop Header must be identical on every page.
+
+=========================================================
+MOBILE HEADER
+=========================================================
+
+Do NOT use desktop navigation.
+
+Design a premium mobile header inspired by Instagram.
+
+Top Header
+
+Logo
+
+Search Icon
+
+Notification Icon
+
+Profile Icon
+
+Hamburger Menu
+
+Use a beautiful slide drawer.
+
+Drawer Items
+
+Home
+
+About
+
+Courses
+
+Services
+
+Blog
+
+Contact
+
+Privacy Policy
+
+Refund Policy
+
+Terms
+
+Login
+
+Signup
+
+=========================================================
+BOTTOM NAVIGATION
+=========================================================
+
+Mobile Only
+
+Floating Bottom Navigation
+
+Glassmorphism
+
+Icons
+
+Home
+
+Courses
+
+Wishlist
+
+Blog
+
+Profile
+
+Animated Active State
+
+=========================================================
+GLOBAL FOOTER
+=========================================================
+
+Create ONE Footer.
+
+Same Footer everywhere.
+
+Footer must include
+
+About
+
+Courses
+
+Services
+
+Blog
+
+Contact
+
+Newsletter
+
+Quick Links
+
+Privacy Policy
+
+Refund Policy
+
+Terms
+
+Social Media
+
+Copyright
+
+=========================================================
+HOME PAGE
+=========================================================
+
+Premium Hero
+
+Large 3D Illustration
+
+Floating Shapes
+
+Animated Statistics
+
+Featured Courses
+
+Popular Categories
+
+Why Choose Us
+
+Success Stories
+
+Testimonials
+
+Latest Blogs
+
+Newsletter
+
+CTA
+
+Premium Footer
+
+=========================================================
+ABOUT PAGE
+=========================================================
+
+Hero
+
+Mission
+
+Vision
+
+Journey
+
+Statistics
+
+Timeline
+
+Team
+
+Achievements
+
+CTA
+
+=========================================================
+COURSES PAGE
+=========================================================
+
+Course Categories
+
+Search
+
+Featured Courses
+
+Popular Courses
+
+Latest Courses
+
+Course Grid
+
+Pagination
+
+Premium Course Cards
+
+=========================================================
+COURSE DETAILS
+=========================================================
+
+Course Hero
+
+Video Preview
+
+Course Information
+
+Course Description
+
+Learning Outcomes
+
+Curriculum
+
+Class List
+
+Instructor
+
+Reviews
+
+FAQ
+
+Related Courses
+
+=========================================================
+SERVICES
+=========================================================
+
+Service Cards
+
+3D Icons
+
+Hover Animation
+
+Features
+
+Benefits
+
+CTA
+
+=========================================================
+BLOG
+=========================================================
+
+Featured Blog
+
+Latest Blogs
+
+Categories
+
+Popular Articles
+
+Newsletter
+
+=========================================================
+SINGLE BLOG
+=========================================================
+
+Hero
+
+Featured Image
+
+Content
+
+Author
+
+Share
+
+Comments
+
+Related Blogs
+
+=========================================================
+YOUTUBE BLOG
+=========================================================
+
+Featured Video
+
+Video Grid
+
+Playlists
+
+Channel CTA
+
+Latest Videos
+
+=========================================================
+CONTACT
+=========================================================
+
+Hero
+
+Contact Form
+
+Map
+
+Office Information
+
+FAQ
+
+Social Media
+
+=========================================================
+LEGAL PAGES
+=========================================================
+
+Privacy Policy
+
+Refund Policy
+
+Terms & Conditions
+
+Same Design System
+
+Readable Layout
+
+Modern Cards
+
+=========================================================
+3D ILLUSTRATIONS
+=========================================================
+
+Use AI-generated images from
+
+/public/images/
+
+Never use placeholder images.
+
+Integrate
+
+3D Books
+
+3D Student
+
+3D Graduation Cap
+
+3D Robot
+
+3D Blog
+
+3D Contact
+
+3D Learning
+
+=========================================================
+ANIMATION
+=========================================================
+
+Use GSAP.
+
+ScrollTrigger.
+
+Lenis.
+
+LottieFiles.
+
+Animations
+
+Fade Up
+
+Fade Left
+
+Fade Right
+
+Scale
+
+Rotate
+
+Floating
+
+Mouse Parallax
+
+Ripple
+
+Glow
+
+Card Hover
+
+Button Hover
+
+Section Reveal
+
+Page Transition
+
+=========================================================
+ICONS
+=========================================================
+
+Use
+
+Lucide Icons
+
+Lottie Icons
+
+Premium SVG Icons
+
+=========================================================
+RESPONSIVE
+=========================================================
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Large Mobile
+
+Portrait
+
+Landscape
+
+Write clean media queries.
+
+Do NOT break layouts.
+
+=========================================================
+ON PAGE SEO
+=========================================================
+
+Semantic HTML
+
+One H1
+
+Proper H2-H6
+
+Meta Title
+
+Meta Description
+
+Open Graph
+
+Twitter Cards
+
+Schema Ready
+
+Breadcrumb
+
+Image Alt
+
+Lazy Loading
+
+=========================================================
+PERFORMANCE
+=========================================================
+
+Optimize Images
+
+Lazy Load Images
+
+Optimize CSS
+
+Optimize JS
+
+Lazy Load Lottie
+
+Smooth Animation
+
+High Lighthouse Score
+
+=========================================================
+CODE QUALITY
+=========================================================
+
+Blade Components
+
+Reusable Components
+
+Tailwind CSS
+
+Custom CSS
+
+Reusable JavaScript
+
+Clean Folder Structure
+
+Maintainable Code
+
+Production Ready
+
+=========================================================
+IMPORTANT
+=========================================================
+
+Keep the backend untouched.
+
+Do not remove any functionality.
+
+Redesign only the frontend.
+
+Maintain the same design language across all pages.
+
+Every page should feel premium, modern, responsive, animated, and consistent with the SarkariCourse brand.
