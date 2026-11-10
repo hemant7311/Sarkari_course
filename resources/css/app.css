@@ -1,3 +1,169 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* -------------------------------------------------------------------------
+   Self-hosted fonts.
+   Drop Inter's woff2 files into public/fonts/inter/ and this will pick
+   them up automatically. Falls back to system fonts until then, so the
+   build never breaks if the font files aren't present yet.
+   ---------------------------------------------------------------------- */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-Variable.woff2") format("woff2-variations"),
+       url("/fonts/inter/Inter-Variable.woff2") format("woff2");
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-ink-700 antialiased;
+    background-color: #ffffff;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-ink-900 font-bold tracking-tight;
+  }
+
+  /* Visible focus states for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid theme("colors.brand.500");
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: theme("colors.brand.100");
+    color: theme("colors.brand.700");
+  }
+}
+
+@layer components {
+  /* Section wrapper: consistent horizontal gutters + max width */
+  .section {
+    @apply mx-auto max-w-8xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-y {
+    @apply py-14 sm:py-16 lg:py-20;
+  }
+
+  /* Eyebrow label used above section headings, e.g. "POPULAR EXAM CATEGORIES" */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-500;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    content: "";
+    @apply h-1 w-1 rounded-full bg-brand-400;
+  }
+
+  .section-heading {
+    @apply mt-2 text-2xl sm:text-3xl lg:text-[2.25rem] font-bold text-ink-900;
+  }
+
+  .section-subheading {
+    @apply mt-2 text-sm sm:text-base text-ink-500;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-500 text-white shadow-pill hover:bg-brand-600 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply btn border border-brand-200 bg-white text-brand-600 hover:border-brand-400 hover:bg-brand-50;
+  }
+
+  .btn-outline-light {
+    @apply btn border border-white/60 bg-transparent text-white hover:bg-white/10;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-2xl border border-ink-900/5 bg-white shadow-card transition-shadow duration-300 hover:shadow-card-hover;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-medium text-brand-600;
+  }
+
+  /* Floating stat chip on hero illustration */
+  .floating-chip {
+    @apply flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-card;
+  }
+
+  .stat-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-xl;
+  }
+
+  /* Nav link underline */
+  .nav-link {
+    @apply relative text-sm font-medium text-ink-700 transition-colors hover:text-brand-500;
+  }
+
+  .nav-link.is-active {
+    @apply text-brand-600;
+  }
+
+  .nav-link.is-active::after {
+    content: "";
+    @apply absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-brand-500;
+  }
+
+  /* Mobile bottom tab bar */
+  .bottom-nav-tab {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav-tab:active i {
+    transform: scale(0.85);
+  }
+
+  .bottom-nav-tab i {
+    transition: transform 0.15s ease;
+  }
+
+  /* Animated (Lordicon) icon wrapper: keeps layout stable whether the
+     Lottie animation or its static Lucide fallback is showing. */
+  .animated-icon {
+    line-height: 0;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-brand-600 focus:shadow-card;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Respect reduced-motion preference for all custom/GSAP-driven animation */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

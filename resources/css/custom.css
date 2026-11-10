@@ -1,0 +1,329 @@
+/* =========================================================
+   SARKARICOURSE — CUSTOM CSS
+   Color theme + Typography + Responsive Media Queries + Animations
+   Yeh file Tailwind ke saath bhi chal sakti hai, ya akele bhi
+   (agar Tailwind use nahi karna ho to sirf isi file se pura
+   design chal jayega).
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. COLOR THEME (CSS Variables) — sab jagah yahi use hoga
+   --------------------------------------------------------- */
+:root {
+  /* Brand purple shades */
+  --color-brand-50:  #f3effe;
+  --color-brand-100: #e6ddfd;
+  --color-brand-200: #c9b8fb;
+  --color-brand-300: #a68af5;
+  --color-brand-400: #8a63f0;
+  --color-brand-500: #6b3bec; /* main buttons / links */
+  --color-brand-600: #5b2ce0; /* hover state */
+  --color-brand-700: #4a20c2;
+
+  /* Text colors */
+  --color-ink-900: #14121f; /* headings */
+  --color-ink-700: #3a3650; /* body text */
+  --color-ink-500: #69647f; /* muted text */
+  --color-ink-300: #a8a3bd; /* light text */
+
+  /* Backgrounds */
+  --color-surface: #ffffff;
+  --color-surface-soft: #f7f5fc;
+  --color-surface-dark: #100c22; /* footer */
+
+  /* Status colors */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-star: #fbbf24;
+
+  /* Font sizes (fluid scale, mobile-first base) */
+  --fs-xs: 0.75rem;    /* 12px */
+  --fs-sm: 0.875rem;   /* 14px */
+  --fs-base: 1rem;     /* 16px */
+  --fs-lg: 1.125rem;   /* 18px */
+  --fs-xl: 1.25rem;    /* 20px */
+  --fs-2xl: 1.5rem;    /* 24px */
+  --fs-3xl: 1.875rem;  /* 30px */
+  --fs-4xl: 2.25rem;   /* 36px */
+  --fs-5xl: 3rem;      /* 48px */
+
+  /* Spacing */
+  --space-section-y: 3.5rem;
+  --radius-card: 1rem;
+  --shadow-card: 0 4px 24px -6px rgba(20, 18, 31, 0.08);
+  --shadow-card-hover: 0 12px 32px -8px rgba(20, 18, 31, 0.16);
+
+  /* Container width */
+  --container-max: 1280px;
+}
+
+/* ---------------------------------------------------------
+   2. RESET + BASE TYPOGRAPHY
+   --------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%; /* 16px root, rem scales from this */
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: var(--color-ink-700);
+  background-color: var(--color-surface);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-ink-900);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--fs-4xl); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-xl); }
+h4 { font-size: var(--fs-lg); }
+
+p  { font-size: var(--fs-base); color: var(--color-ink-500); }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------------------------------------------------------
+   3. REUSABLE COMPONENT CLASSES
+   --------------------------------------------------------- */
+.section {
+  padding-top: var(--space-section-y);
+  padding-bottom: var(--space-section-y);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-brand-500);
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(20, 18, 31, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--color-brand-500);
+  color: #fff;
+  box-shadow: 0 8px 20px -4px rgba(107, 59, 236, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--color-brand-600);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--color-brand-600);
+  border: 1px solid var(--color-brand-200);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-brand-400);
+  background: var(--color-brand-50);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-brand-50);
+  color: var(--color-brand-600);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   4. GRID LAYOUTS (mobile-first — default = 1 column)
+   --------------------------------------------------------- */
+.grid-stats      { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.grid-categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.grid-features   { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.grid-courses    { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.grid-footer     { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+
+/* ---------------------------------------------------------
+   5. ANIMATIONS (keyframes)
+   --------------------------------------------------------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Apply animation on scroll-into-view via JS toggling this class */
+.animate-in {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.animate-fade {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.float-chip {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hover-pulse:hover {
+  animation: pulseScale 0.4s ease;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================================
+   6. RESPONSIVE MEDIA QUERIES — ALL DEVICES
+   Mobile-first approach: base styles = smallest screen,
+   phir upar ki taraf overrides badhte breakpoints par.
+   =========================================================== */
+
+/* ---- Small Mobile (upto 375px) ---- */
+@media (max-width: 375px) {
+  :root {
+    --fs-4xl: 1.75rem;
+    --fs-3xl: 1.5rem;
+    --space-section-y: 2rem;
+  }
+  .container { padding: 0 0.75rem; }
+  .btn { padding: 0.65rem 1.25rem; font-size: var(--fs-xs); }
+}
+
+/* ---- Mobile (376px – 639px) ---- */
+@media (min-width: 376px) and (max-width: 639px) {
+  :root {
+    --fs-4xl: 2rem;
+    --fs-3xl: 1.625rem;
+    --space-section-y: 2.5rem;
+  }
+}
+
+/* ---- Large Mobile / Small Tablet (640px+) ---- */
+@media (min-width: 640px) {
+  :root { --fs-4xl: 2.5rem; --fs-3xl: 1.875rem; }
+  .grid-categories { grid-template-columns: repeat(3, 1fr); }
+  .grid-features   { grid-template-columns: repeat(2, 1fr); }
+  .grid-courses    { grid-template-columns: repeat(2, 1fr); }
+  .grid-footer     { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Tablet (768px+) ---- */
+@media (min-width: 768px) {
+  :root {
+    --fs-5xl: 3.25rem;
+    --space-section-y: 4rem;
+  }
+  h1 { font-size: var(--fs-5xl); }
+}
+
+/* ---- Laptop / Small Desktop (1024px+) ---- */
+@media (min-width: 1024px) {
+  .grid-stats      { grid-template-columns: repeat(4, 1fr); }
+  .grid-categories { grid-template-columns: repeat(6, 1fr); }
+  .grid-features   { grid-template-columns: repeat(4, 1fr); }
+  .grid-courses    { grid-template-columns: repeat(5, 1fr); }
+  .grid-footer     { grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; }
+
+  :root { --space-section-y: 5rem; }
+}
+
+/* ---- Desktop / Large screens (1280px+) ---- */
+@media (min-width: 1280px) {
+  .container { padding: 0 2rem; }
+  :root { --space-section-y: 6rem; }
+}
+
+/* ---- Extra Large / Wide monitors (1536px+) ---- */
+@media (min-width: 1536px) {
+  :root { --container-max: 1400px; }
+}
+
+/* ---- Landscape phones (short height) ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root { --space-section-y: 2rem; }
+}
+
+/* ---- Print (bonus: clean printout, no colors/shadows) ---- */
+@media print {
+  .btn, nav, footer, [data-carousel] { display: none !important; }
+  body { color: #000; }
+}
